@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lumiere"
+version = "0.1.0"
+description = "Minimal TUI to control display brightness, keyboard backlight, and night mode"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+authors = [{ name = "Manuel Sahores" }]
+keywords = ["brightness", "backlight", "night-mode", "tui", "linux"]
+classifiers = [
+    "Environment :: Console :: Curses",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Utilities",
+]
+
+[project.scripts]
+lumiere = "lumiere:main_entry"
+
+[project.urls]
+Homepage = "https://github.com/manusahores/lumiere"
