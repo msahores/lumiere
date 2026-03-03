@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """lumiere — Minimal TUI for display brightness, keyboard backlight, and night mode."""
 import curses
+import os
+import shutil
 import subprocess
+import sys
 
 SCREEN_STEP = 5   # percent
 TEMP_MIN = 1000   # K (max warm / red)
@@ -191,7 +194,25 @@ def main(stdscr):
     finally:
         cleanup()
 
+def _find_terminal():
+    """Find a terminal emulator using standard methods, then common fallbacks."""
+    for term in (
+        os.environ.get("TERMINAL"),     # user preference
+        "xdg-terminal-exec",            # freedesktop standard
+        "x-terminal-emulator",          # Debian/Ubuntu alternatives
+        "alacritty", "foot", "kitty",   # modern
+        "st", "urxvt", "xterm",         # classic
+    ):
+        if term and shutil.which(term):
+            return term
+    return None
+
 def main_entry():
+    if not os.isatty(sys.stdin.fileno()):
+        term = _find_terminal()
+        if not term:
+            sys.exit("lumiere: no terminal emulator found (set $TERMINAL)")
+        os.execvp(term, [term, "-e", sys.executable, __file__])
     curses.wrapper(main)
 
 if __name__ == "__main__":
