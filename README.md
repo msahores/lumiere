@@ -19,27 +19,22 @@ LUMIERE   j/k select  h/l adjust  q quit
 - **Zero dependencies** — just Python 3.8+ and standard library (curses)
 - **Graceful degradation** — keyboard row hidden if no kbd backlight, night row hidden if gammastep not installed
 
-## Requirements
+## Install
 
-- [brightnessctl](https://github.com/Hummer12007/brightnessctl) — screen and keyboard control
-- [gammastep](https://gitlab.com/chinstrap/gammastep) *(optional)* — night mode / color temperature
-
-### Arch Linux
+### Arch Linux (AUR)
 
 ```sh
-sudo pacman -S brightnessctl gammastep
+yay -S lumiere
 ```
 
-## Install
+Dependencies (`brightnessctl`, `gammastep`) are installed automatically.
+
+### Manual
+
+Requires [brightnessctl](https://github.com/Hummer12007/brightnessctl) and optionally [gammastep](https://gitlab.com/chinstrap/gammastep) for night mode.
 
 ```sh
 pip install .
-```
-
-Or run directly:
-
-```sh
-python3 lumiere.py
 ```
 
 ## Controls
