@@ -1,6 +1,6 @@
 # lumière
 
-Minimal TUI to control display brightness, keyboard backlight, and night mode on Linux.
+Minimal TUI to control display brightness, keyboard backlight, and night mode on Arch Linux.
 
 ![lumiere](screenshot.png)
 
