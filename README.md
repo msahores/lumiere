@@ -2,13 +2,7 @@
 
 Minimal TUI to control display brightness, keyboard backlight, and night mode on Linux.
 
-```
-LUMIERE   j/k select  h/l adjust  q quit
-
-▸ Display   ██████████████████░░░░░░░░  65%
-  Keyboard  ██ ░░                        1/2
-  Night     ████████░░░░░░░░░░░░░░░░░░  3500K
-```
+![lumiere](screenshot.png)
 
 ## Features
 
