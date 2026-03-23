@@ -1,4 +1,5 @@
 # lumière
+(MVP phase ;D)
 
 Minimal TUI to control display brightness, keyboard backlight, and night mode on Arch Linux.
 
